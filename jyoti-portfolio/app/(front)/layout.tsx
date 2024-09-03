@@ -1,15 +1,20 @@
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/header";
-import { ThemeProvider } from "../context/ThemeContext";
+// app/(front)/layout.tsx
 
-export default function RootLayout({
-    children
-}: Readonly<{ children: React.ReactNode }>) {
+"use client"; // Ensure this is a client component
+
+import React from 'react';
+import { ThemeProvider } from '../context/ThemeContextClient'; // Adjust path as necessary
+
+const FrontLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <ThemeProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
+            <div>
+                <h2>Front Layout</h2>
+                {children}
+            </div>
         </ThemeProvider>
     );
-}
+};
+
+export default FrontLayout;
+
