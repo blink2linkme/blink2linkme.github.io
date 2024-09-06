@@ -4,14 +4,17 @@
 
 import React from 'react';
 import { ThemeProvider } from '../context/ThemeContextClient'; // Adjust path as necessary
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
 const FrontLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <ThemeProvider>
-            <div>
-                <h2>Front Layout</h2>
-                {children}
-            </div>
+            <ThemeSwitcher />
+            <Header />
+            <main>{children}</main>
+            <Footer />
         </ThemeProvider>
     );
 };

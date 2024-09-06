@@ -2,7 +2,7 @@
 
 "use client"; // Ensure this is a client component
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 interface ThemeContextType {
     isDarkTheme: boolean;
@@ -16,16 +16,17 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const toggleTheme = () => {
         setIsDarkTheme(prev => !prev);
+    };
+
+    const initializeDark = () => {
         if (isDarkTheme) {
-            document!.querySelector("body")!.classList.add("dark-theme");
-            document!.querySelector("body")!.classList.remove("light-theme");
+            document!.querySelector("html")!.classList.add("dark");
         } else {
-            document!.querySelector("body")!.classList.add("light-theme");
-            document!.querySelector("body")!.classList.remove("dark-theme");
+            document!.querySelector("html")!.classList.remove("dark");
         }
-    } 
+    };
 
-
+    useEffect(() => initializeDark());
 
     return (
         <ThemeContext.Provider value={{ isDarkTheme, toggleTheme }}>
