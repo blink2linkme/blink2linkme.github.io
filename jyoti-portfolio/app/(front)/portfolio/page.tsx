@@ -1,7 +1,7 @@
 export default function Portfolio() {
     return (
         <div className="bg-white dark:bg-gray-800 dark:text-white">
-            <h2 className="text-4xl font-bold  leading-tight py-10 px-6">Professional Experience</h2>
+            <h2 className="text-4xl font-bold  leading-tight pt-10 pb-20 px-6 underline text-center">Professional Experience</h2>
             <div className="grid grid-cols-3">
                 <div className="text-center">
                     Oct, 2022 - Present
@@ -217,6 +217,25 @@ export default function Portfolio() {
                     <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">TFS</button>
                     <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Mantis</button>
                 </div>
+            </div>
+            <div className="flex flex-col py-10 px-6 items-center">
+                <h3 className="text-2xl font-bold leading-tight underline">Other Experience</h3>
+                <ul className="py-10 text-center leading-10">
+                    <li>
+                        Worked as a part time teacher for S.L.C. and +2 level at different schools and colleges from 2009 to 2013
+                    </li>
+                    <li>
+                        Worked as data operator at digitek.com.np Pvt. Ltd. (Authorized Distributor of Ncell Pvt. Ltd.) from April 2006 to September 2006
+                    </li>
+                    <li>
+                        Worked as computer technician at Sarbagun Saving and Credit Co-Op. Ltd from May 2008 to August 2009
+                    </li>
+                </ul>
+            </div>
+
+            <div className="flex flex-col py-10 px-6 items-center">
+                <h3 className="text-2xl font-bold leading-tight underline">Education</h3>
+                <p className="py-10 text-center leading-10">Bachelor of Information Management (BIM) | Tribhuvan University, Kathmandu (2009-2013)</p>
             </div>
         </div>
     );
