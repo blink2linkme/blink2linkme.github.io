@@ -6,7 +6,6 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  /*--dark-background: #353535: --dark-color: #D9D9D9 --light-background: #FFFFFF --light-color: #284B63*/
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,24 +28,3 @@ body {
     text-wrap: balance;
   }
 }
-
-/* body.dark {
-  color: var(--dark-color);
-  background-color: var(--dark-background);
-} */
-/* body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-} */
-
-/* Light theme styles */
-/* body.light-theme {
-  background-color: white;
-  color: black;
-}
-
-/* Dark theme styles */
-/* body.dark-theme {
-  background-color: black;
-  color: white;
-} */
