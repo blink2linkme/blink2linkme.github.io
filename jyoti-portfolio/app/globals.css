@@ -27,4 +27,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .active-link .text-underline {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 }
+

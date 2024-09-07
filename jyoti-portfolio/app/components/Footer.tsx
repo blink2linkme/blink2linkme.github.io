@@ -2,7 +2,7 @@ import SocialMedia from "../components/SocialMedia";
 
 export default function Footer() {
     return (
-        <footer className="container mx-auto bg-white dark:bg-gray-800">
+        <footer className="container mx-auto">
             <p className="text-center py-10 text-slate-900 dark:text-white">
                 Let's connect -- <a href="mailto:hello@jyoti.name.np">hello@jyoti.name.np</a>
             </p>
