@@ -4,7 +4,7 @@
 
 import React from 'react';
 import { ThemeProvider } from '../context/ThemeContextClient'; // Adjust path as necessary
-import Header from '../components/header';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Head from 'next/head'
 
