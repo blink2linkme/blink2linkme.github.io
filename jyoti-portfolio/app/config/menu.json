@@ -8,5 +8,10 @@
         "path": "/portfolio",
         "name": "Portfolio",
         "icon": ""
+    },
+    {
+        "path":"/blog",
+        "name":"Blog",
+        "icon":""
     }
 ]
