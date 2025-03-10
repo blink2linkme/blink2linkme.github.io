@@ -23,7 +23,7 @@ const RecentWritings = () => {
             {posts?.map((post: Post, index: Number) => <ArticleHeadLine key={index.toString()} post={post} />)}
         </div>
         <div className="mt-4 text-sm font-medium text-right">
-            <Link href={'/blog'} className="text-blue-600 hover:text-purple-400 text-underline">Read more -></Link>
+            <Link href={'/blog'} className="text-blue-600 hover:text-purple-400 text-underline">Read more 🡢</Link>
         </div>
     </div>;
 }

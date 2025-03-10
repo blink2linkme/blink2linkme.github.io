@@ -6,6 +6,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'i.pravatar.cc',
                 //pathname:'/images/**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'media.licdn.com'
             }
         ],
         deviceSizes:[320, 420, 768, 1024, 1200],
