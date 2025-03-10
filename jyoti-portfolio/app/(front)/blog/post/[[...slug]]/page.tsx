@@ -22,7 +22,7 @@ const BlogPost = () => {
                 setPostContent(data)
             });
         }
-    }, [filePath]);
+    }, [paths, filePath]);
 
     if (!postContent) {
         return <Loading />;
