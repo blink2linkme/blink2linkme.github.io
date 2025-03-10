@@ -18,7 +18,7 @@ const FrontLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
                 <meta name="theme-color" content="#ffffff" />
             </Head>
-            <div className="bg-white dark:bg-gray-800 dark:text-white">
+            <div className="bg-white dark:bg-gray-800 dark:text-white min-h-screen">
                 <Header />
                 <main>{children}</main>
                 <Footer />

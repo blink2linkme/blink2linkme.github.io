@@ -1,3 +1,4 @@
+'use client';
 import { useTheme } from "../context/ThemeContextClient";
 
 export default function ThemeSwitcher() {
@@ -19,6 +20,9 @@ export default function ThemeSwitcher() {
     </svg>;
     return (
         // z-10 absolute top-0 left-1/2 transform -translate-x-1/2 p-2 border-solid 
-        <button onClick={toggleTheme} className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg focus:outline-none focus:ring-gray-200 dark:text-gray-400 dark:hover-bg-gray-700 dark:focus:ring-gray-600 transition-all duration-500 hover:-translate-y-2">{isDarkTheme ? light : dark}</button>
+        // <button onClick={toggleTheme} className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg focus:outline-none focus:ring-gray-200 dark:text-gray-400 dark:hover-bg-gray-700 dark:focus:ring-gray-600 transition-all duration-500 hover:-translate-y-2">{isDarkTheme ? light : dark}</button>
+        <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+            {isDarkTheme ? light : dark}
+        </button>
     );
 }
