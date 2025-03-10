@@ -87,3 +87,8 @@ html, body {
   50% { transform: translateY(-20px); }
 }
 .floating { animation: float 3s ease-in-out infinite; }
+
+.line-break {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}

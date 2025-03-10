@@ -1,13 +1,17 @@
+import { RiProfileLine } from "react-icons/ri";
 export default function Portfolio() {
     return (
         <div className="container mx-auto p-6 text-justify rounded shadow">
             <div className="flex items-center pb-10">
-                <h2 className="text-4xl font-bold leading-tight pt-10 pb-20 px-6 underline text-center flex-grow">Professional Experience</h2>
-                <a href="/cv_jyoti.pdf" download className="flex items-center py-2 px-4 rounded transition-all duration-500 hover:-translate-y-2" title="download">
+                <h1 className="text-4xl font-bold pt-10 pb-20 px-6 underline text-center flex-grow">Professional Experience</h1>
+                <a href="/Jyoti_Resume.pdf" download className="flex items-center py-2 px-4 rounded transition-all duration-500 hover:-translate-y-2" title="Resume">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18.5 9C19.8807 9 21 10.1193 21 11.5V15C21 17.8284 21 19.2426 20.1213 20.1213C19.2426 21 17.8284 21 15 21H9C6.17157 21 4.75736 21 3.87868 20.1213C3 19.2426 3 17.8284 3 15V11.5C3 10.1193 4.11929 9 5.5 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" className="my-path"></path>
                         <path d="M12 16L7.80408 11.804M12 16L16.196 11.804M12 16V3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="my-path"></path>
                     </svg>
+                </a>
+                <a href="/Jyoti_CV.pdf" download className="flex items-center py-2 px-4 rounded transition-all duration-500 hover:-translate-y-2" title="CV">
+                    <RiProfileLine size="1.5rem" />
                 </a>
             </div>
             <div className="sm:grid sm:grid-cols-3 gap-4 pb-10">
@@ -15,12 +19,14 @@ export default function Portfolio() {
                     <p className="text-center max-sm:pb-5">Oct, 2022 - Present</p>
                 </div>
                 <div className="col-span-2">
-                    <h3 className="text-2xl font-bold leading-tight">
+                    <h2 className="text-2xl font-bold leading-tight">
                         Developer III @ Verisk Risk Rating Pty. Ltd. - Brisbane, Australia
-                    </h3>
+                    </h2>
                     <ul className="list-disc p-5">
-                        <li>Lead and mentor teams in developing complex software solutions, ensuring high-quality and scalable applications while driving technical excellence.</li>
-                        <li>Architect and optimize systems through strategic planning, problem-solving, and collaboration with cross-functional teams, adhering to industry standards and best practices</li>
+                        <li>Designed and implemented RESTful APIs, reducing legacy SOAP dependencies by 70% using AWS Services</li>
+                        <li>Improved system uptime to 99%, ensuring SLA compliance through proactive monitoring and reporting using observability tools like SPLUNK and New Relic</li>
+                        <li>Enhanced regional services for APAC, addressing customer queries with a 95% resolution rate</li>
+                        <li>Involve in mentorship program to acquire new talent and grow existing people</li>
                     </ul>
                     <div className="max-sm:grid max-sm:grid-cols-2 justify-items-stretch">
                         <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">AWS</button>
@@ -61,10 +67,13 @@ export default function Portfolio() {
                     <p className="text-center max-sm:pb-5">Dec, 2019 - Sept, 2022</p>
                 </div>
                 <div className="col-span-2">
-                    <h3 className="text-2xl font-bold leading-tight">Senior Software Engineer @ Verisk Nepal Pvt. Ltd. - Lalitpur, Nepal</h3>
+                    <h2 className="text-2xl font-bold leading-tight">Senior Software Engineer @ Verisk Nepal Pvt. Ltd. - Lalitpur, Nepal</h2>
                     <ul className="list-disc  p-5">
-                        <li>Designed and migrated cloud-native applications using AWS services (e.g., AWS Batch, S3, Lambda), and ensured code quality with tools like SonarQube.</li>
-                        <li>Monitored application performance with tools like Splunk and New Relic, while participating in agile processes, overseeing job scheduling, and mentoring team members.</li>
+                        <li>Spearheaded architectural overhauls, transitioning legacy applications to cutting-edge technologies for cloud-native applications leveraging Amazon Web Services</li>
+                        <li>Ensured application excellence by meticulously tracking performance metrics using Splunk, New Relic, and Elasticsearch, resolving issues promptly for seamless operation</li>
+                        <li>Provided presentation on Unit Testing and Code Coverage</li>
+                        <li>Actively participated in project and spring planning, grooming, and retrospective meetings</li>
+                        <li>Part of leadership team working towards hiring, mentoring, performance reviewing and interviewing the team, increasing the workforce by 50%</li>
                     </ul>
                     <div className="max-sm:grid max-sm:grid-cols-2 justify-items-stretch">
                         <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">AWS</button>
@@ -108,10 +117,11 @@ export default function Portfolio() {
                     <p className="text-center max-sm:pb-5">Dec, 2018 - Dec, 2019</p>
                 </div>
                 <div className="col-span-2">
-                    <h3 className="text-2xl font-bold leading-tight">Senior .NET Developer @ ByProxy Nepal(Blinqlab) Pvt. Ltd. - Lalitpur, Nepal</h3>
+                    <h2 className="text-2xl font-bold leading-tight">Senior .NET Developer @ ByProxy Nepal(Blinqlab) Pvt. Ltd. - Lalitpur, Nepal</h2>
                     <ul className="list-disc  p-5">
-                        <li>Optimized software performance and integrated Azure services (e.g., Queue, Blob, CDN) while managing data loading schedules with SSIS and adapting web applications to business requirements.</li>
-                        <li>Delivered technical support and leadership, guiding team members and ensuring effective project execution </li>
+                        <li>Enhanced the performance of existing software through strategic optimizations, resulting in improved user experience and system efficiency</li>
+                        <li>Took a leadership role in guiding, mentoring, and evaluating team members</li>
+                        <li>Acquired knowledge in Azure Cloud platform and Floorplanner integration</li>
                     </ul>
                     <div className="max-sm:grid max-sm:grid-cols-2 justify-items-stretch">
                         <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Azure</button>
@@ -135,13 +145,13 @@ export default function Portfolio() {
             </div>
             <div className="sm:grid sm:grid-cols-3 gap-4 pb-10">
                 <div className="content-center">
-                    <p className="text-center max-sm:pb-5">May, 2018 - Oct, 2019</p>
+                    <p className="text-center max-sm:pb-5">May, 2018 - Oct, 2018</p>
                 </div>
                 <div className="col-span-2">
-                    <h3 className="text-2xl font-bold leading-tight">Team Lead (Co-founder) @ Silent Turtle Pvt. Ltd. - Lalitpur, Nepal</h3>
+                    <h2 className="text-2xl font-bold leading-tight">Team Lead (Co-founder) @ Silent Turtle Pvt. Ltd. - Lalitpur, Nepal</h2>
                     <ul className="list-disc  p-5">
-                        <li>Directed project analysis, planning, and scheduling, while supervising teams and ensuring adherence to Agile methodologies.</li>
-                        <li>Created technical design documents and user manuals, and maintained system performance throughout the project lifecycle.</li>
+                        <li>Designed and launched MVP within tight deadlines and limited resources</li>
+                        <li>Delivered clear and compelling pitches, presentations, and reports to investors, stakeholders, and team members</li>
                     </ul>
                     <div className="max-sm:grid max-sm:grid-cols-2 justify-items-stretch">
                         <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET Core</button>
@@ -163,10 +173,11 @@ export default function Portfolio() {
                     <p className="text-center max-sm:pb-5">May, 2017 - April, 2018</p>
                 </div>
                 <div className="col-span-2">
-                    <h3 className="text-2xl font-bold leading-tight">Team Lead @ CloudyFox Technology Pvt. Ltd. - Kathmandu, Nepal</h3>
+                    <h2 className="text-2xl font-bold leading-tight">Team Lead @ CloudyFox Technology Pvt. Ltd. - Kathmandu, Nepal</h2>
                     <ul className="list-disc  p-5">
-                        <li>Formed and led a .NET development team, overseeing project planning, execution, and adherence to Agile methodologies while maintaining system performance.</li>
+                        <li>Established and led a new .NET development team</li>
                         <li>Guided and supported team members, developed technical documentation, and managed project deliverables effectively.</li>
+                        <li>Secured contracts from one of leading cinema theater brand in Nepal and partnered with multiple stakeholders to build more effective cinema theater ticketing system</li>
                     </ul>
                     <div className="max-sm:grid max-sm:grid-cols-2 justify-items-stretch">
                         <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET MVC</button>
@@ -190,10 +201,10 @@ export default function Portfolio() {
                     <p className="text-center max-sm:pb-5">Jan, 2015 - Feb, 2017</p>
                 </div>
                 <div className="col-span-2">
-                    <h3 className="text-2xl font-bold leading-tight">.NET Developer @ Braindigit IT Solution Pvt. Ltd. - Kathmandu, Nepal</h3>
+                    <h2 className="text-2xl font-bold leading-tight">Software Engineer @ Braindigit IT Solution Pvt. Ltd. - Kathmandu, Nepal</h2>
                     <ul className="list-disc  p-5">
-                        <li>Develop and maintain software applications: Design, code, and test new applications.</li>
-                        <li>Contribute to development: Collaborate with teams, use development tools, optimize code, participate in open-source projects, and follow development methodologies.</li>
+                        <li>Re-engineered key process as data denormalization and front-end logic migration to server-side improving data loading efficiency, reducing page load times by 40%</li>
+                        <li>Rewrote and migrated ecommerce application ensuring performance and stability during high loads </li>
                     </ul>
                     <div className="max-sm:grid max-sm:grid-cols-2 justify-items-stretch">
                         <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET MVC</button>
@@ -220,10 +231,11 @@ export default function Portfolio() {
                     <p className="text-center max-sm:pb-5">June, 2014 - Jan, 2015</p>
                 </div>
                 <div className="col-span-2">
-                    <h3 className="text-2xl font-bold leading-tight">Jr. .NET Developer @ ebPearls Pvt. Ltd. - Lalitpur, Nepal</h3>
+                    <h2 className="text-2xl font-bold leading-tight">Jr. Programmer @ ebPearls Pvt. Ltd. - Lalitpur, Nepal</h2>
                     <ul className="list-disc  p-5">
-                        <li>Developed high-end websites and web applications adhering to company standards.</li>
-                        <li>Managed project tasks and communication, providing daily work plans, status reports, and collaborating with the Project Manager/Team Leader while preparing comprehensive project documentation.</li>
+                        <li>Developed high-end websites and web applications adhering to company standards</li>
+                        <li>Managed project tasks and communication, providing daily work plans, status reports, and collaborating with the Project Manager/Team Leader while preparing comprehensive project documentation</li>
+                        <li>Enhanced UI/UX improving user retention by 30%</li>
                     </ul>
                     <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET MVC</button>
                     <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET</button>
@@ -240,8 +252,62 @@ export default function Portfolio() {
                     <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Mantis</button>
                 </div>
             </div>
+            <div className="grid sm:grid-cols-3 gap-4 pb-10 ">
+                <div className="content-center">
+                    <p className="text-center max-sm:pb-5">April, 2013 - Feb, 2014</p>
+                </div>
+                <div className="col-span-2">
+                    <h2 className="text-2xl font-bold leading-tight">Software Developer @ Uniaxial Software Pvt. Ltd. - Lalitpur, Nepal</h2>
+                    <ul className="list-disc  p-5">
+                        <li>Contributed to the development of banking solutions tailored for cooperative societies with modules like account management, loan tracking and others</li>
+                        <li>Developed and maintained multiple software solutions using wide range of technologies showcasing adaptability and quick learning</li>
+                    </ul>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET MVC</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET Web API</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET Web Forms</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">C#</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">LINQ</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Lambda Query</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">JS</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">jQuery</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">HTML</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">CSS</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">SVN</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">PHP</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">MS-SQL</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">MySQL</button>
+                </div>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-4 pb-10 ">
+                <div className="content-center">
+                    <p className="text-center max-sm:pb-5">Oct, 2012 - Mar, 2013</p>
+                </div>
+                <div className="col-span-2">
+                    <h2 className="text-2xl font-bold leading-tight">Intern @ Uniaxial Software Pvt. Ltd. - Lalitpur, Nepal</h2>
+                    <ul className="list-disc  p-5">
+                        <li>Obtained knowledge on organizational work process and successfully transitioned to full-time employee from an intern</li>
+                        <li>Obtained practical knowledge on Software Development Life Cycle</li>
+                    </ul>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET MVC</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET Web API</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">ASP.NET Web Forms</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">C#</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">LINQ</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Lambda Query</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">JS</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">jQuery</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">HTML</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">CSS</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">SVN</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">PHP</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">MS-SQL</button>
+                    <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">MySQL</button>
+                </div>
+            </div>
             <div className="flex flex-col py-10 px-6 items-center">
-                <h3 className="text-2xl font-bold leading-tight underline">Other Experience</h3>
+                <h2 className="text-2xl font-bold leading-tight underline">Other Experience</h2>
                 <ul className="py-10 text-center leading-10">
                     <li>
                         Worked as a part time teacher for S.L.C. and +2 level at different schools and colleges from 2009 to 2013
@@ -255,7 +321,7 @@ export default function Portfolio() {
                 </ul>
             </div>
             <div className="flex flex-col py-10 px-6 items-center">
-                <h3 className="text-2xl font-bold leading-tight underline">Education</h3>
+                <h2 className="text-2xl font-bold leading-tight underline">Education</h2>
                 <p className="py-10 text-center leading-10">Bachelor of Information Management (BIM) | Tribhuvan University, Kathmandu (2009-2013)</p>
             </div>
         </div>
