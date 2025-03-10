@@ -3,8 +3,7 @@
 import Loading from "@/app/(front)/loading";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { getPostContent, getPostFile, Post } from "@/app/_lib/StaticContentService";
-import Markdown from "react-markdown";
+import { getPostContent, Post } from "@/app/_lib/StaticContentService";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -23,7 +22,7 @@ const BlogPost = () => {
                 setPostContent(data)
             });
         }
-    }, [paths]);
+    }, [filePath]);
 
     if (!postContent) {
         return <Loading />;
@@ -59,9 +58,7 @@ const BlogPost = () => {
             <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md text-justify text-lg space-y-4 leading-relaxed line-break">
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
-                    rehypePlugins={[rehypeRaw]}
-                    children={postContent.previewText}
-                ></ReactMarkdown>
+                    rehypePlugins={[rehypeRaw]}>{postContent.previewText}</ReactMarkdown>
             </div>
 
             {/* Separator */}

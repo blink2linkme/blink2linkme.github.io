@@ -97,9 +97,8 @@ const Blog = () => {
                                     </p>
                                     <Link
                                         href={`/blog/post${article.fileName}`}
-                                        className="text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-600 transition-colors"
-                                    >
-                                        Read more ->
+                                        className="text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-600 transition-colors">
+                                        Read more 🡢
                                     </Link>
                                 </div>
                             ))}
@@ -132,7 +131,7 @@ const Blog = () => {
                 <div className="bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-xl rounded-lg p-8 flex flex-col justify-center items-center">
                     <h3 className="text-xl font-semibold mb-6">Quote of the Day</h3>
                     <p className="italic text-lg text-center mb-6">
-                        "The best way to predict the future is to create it."
+                    &ldquo;The best way to predict the future is to create it.&rdquo;
                     </p>
                     <p className="text-sm text-gray-300">- Peter Drucker</p>
                 </div>
