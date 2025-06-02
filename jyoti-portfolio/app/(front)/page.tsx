@@ -8,7 +8,7 @@ const FrontPage: React.FC = () => {
             <div className="text-center">
                 <div className="floating inline-block mb-10">
                     <Image
-                        src="https://media.licdn.com/dms/image/v2/D5603AQES4yNbHj-w-g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725975656672?e=1746662400&v=beta&t=zI88noMDgZkZ1AVCnSxFiPevaRojnB0z0EHHFzv1LyA"
+                        src="/images/jyoti.png"
                         alt="Profile"
                         className='rounded-full w-48 h-48 object-cover shadow-lg'
                         priority

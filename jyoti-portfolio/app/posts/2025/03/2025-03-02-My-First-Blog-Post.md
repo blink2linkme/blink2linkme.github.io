@@ -1,5 +1,5 @@
 # My First Blog Post
-<small>2025-03-02 | Personal | Thoughts</small> 
+<small>2024-03-02 | Personal | Thoughts</small> 
 
 ## Reflecting on My Journey as a Developer
 

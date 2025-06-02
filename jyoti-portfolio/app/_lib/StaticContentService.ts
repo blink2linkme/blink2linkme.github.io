@@ -27,7 +27,7 @@ const getFiles = async (dir: string): Promise<string[]> => {
 }
 
 export const getPosts = async (pagination: { page: number, limit: number }) => {
-    const postsPath = path.join(process.cwd(), 'posts');
+    const postsPath = path.join(process.cwd(), 'public', 'posts');
     const { page = 1, limit = 10 } = pagination;
 
     // Pagination
@@ -43,7 +43,6 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
         const postsMeta = await Promise.all(paginatedFiles.map(async (filePath) =>
             await readFileChunks(filePath)
         ));
-        console.log(postsMeta);
         const filteredPostMeta = postsMeta.filter(f => f !== null) as Post[];
         const postResult: PostResult = {
             count: filteredPostMeta.length,
@@ -58,7 +57,7 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
 
 
 export const getPostContent = async (filePath: string): Promise<Post | null> => {
-    const fullFilePath = path.join(process.cwd(), "posts", filePath);
+    const fullFilePath = path.join(process.cwd(), "public", "posts", filePath);
 
     const fileReadStream = fs.createReadStream(fullFilePath, { encoding: 'utf-8' });
 
@@ -88,7 +87,7 @@ export const getPostContent = async (filePath: string): Promise<Post | null> => 
 }
 
 export const getPostFile = async (filePath: string): Promise<string> => {
-    const fullFilePath = path.join(process.cwd(), "posts", filePath);
+    const fullFilePath = path.join(process.cwd(), "public", "posts", filePath);
     return fs.readFileSync(fullFilePath, { encoding: 'utf-8' });
 }
 
