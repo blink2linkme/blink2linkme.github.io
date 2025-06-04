@@ -12,10 +12,9 @@ export type PostResult = {
 export const getCwd = async () => {
     const pathName = path.join(process.cwd(), 'public', 'posts');
     const relativePath = path.relative(process.cwd(), pathName);
-    const rootPath = path.resolve(__dirname, "../../")
+    const rootPath = path.resolve(__dirname, "../../../")
     const postsPath = path.join(rootPath, 'posts');
-    const dirLists = fs.readdirSync(postsPath);
-    return { pathName, relativePath, rootPath, postsPath, dirLists };
+    return { pathName, relativePath, rootPath, postsPath };
 }
 const getFiles = async (dir: string): Promise<string[]> => {
     try {
@@ -41,7 +40,9 @@ const getFiles = async (dir: string): Promise<string[]> => {
 }
 
 export const getPosts = async (pagination: { page: number, limit: number }) => {
-    const postsPath = path.relative(process.cwd(), 'posts');
+    const rootPath = path.resolve(__dirname, "../../../")
+    const postsPath = path.join(rootPath, 'posts');
+    console.log(postsPath, "line 45");
     const { page = 1, limit = 10 } = pagination;
 
     // Pagination
@@ -72,7 +73,10 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
 
 
 export const getPostContent = async (filePath: string): Promise<Post | null> => {
-    const fullFilePath = path.join(path.relative(process.cwd(), "posts"), filePath);
+    const rootPath = path.resolve(__dirname, "../../../")
+    
+    const fullFilePath = path.join(rootPath, "posts", filePath);
+    console.log("Full File Path: ", fullFilePath, " line 79");
 
     const fileReadStream = fs.createReadStream(fullFilePath, { encoding: 'utf-8' });
 
@@ -103,7 +107,9 @@ export const getPostContent = async (filePath: string): Promise<Post | null> => 
 }
 
 export const getPostFile = async (filePath: string): Promise<string> => {
-    const fullFilePath = path.join(path.relative(process.cwd(), "posts"), filePath);
+    const rootPath = path.resolve(__dirname, "../../../");
+    const fullFilePath = path.join(rootPath, "posts", filePath);
+    console.log("Full File Path: ", fullFilePath, " line 112");
     return fs.readFileSync(fullFilePath, { encoding: 'utf-8' });
 }
 
@@ -146,8 +152,9 @@ const readFileChunks = async (filePath: string) => {
 const contentToPost = (fileLines: Array<string>, filePath: string, isFullContent: boolean = false): Post => {
     try {
         const metaData = fileLines[1]?.split('|');
-        const postPath = path.join("posts");
-        const relativeFileName = path.relative(path.join(process.cwd(), postPath), filePath);
+        const rootPath = path.resolve(__dirname, "../../../");
+        const relativeFileName = path.join(rootPath, "posts", filePath);
+        console.log("Relative File Name: ", relativeFileName, 'line 157');
         const post: Post = {
             title: fileLines[0]?.slice(1)?.trim(),
             date: metaData ? metaData[0]?.slice(7, 17) : '',
@@ -158,6 +165,7 @@ const contentToPost = (fileLines: Array<string>, filePath: string, isFullContent
                 : (fileLines[5]?.substring(0, 100) || ''),
             fileName: relativeFileName
         };
+        console.log("Post Object: ", post);
         return post;
     } catch (error) {
         console.error("Error parsing post content:", error);
