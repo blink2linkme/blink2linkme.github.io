@@ -38,10 +38,13 @@ const Blog = () => {
     // Set up IntersectionObserver to load more articles when the user reaches the bottom
     useEffect(() => {
         const getCwds = async () => {
-            const { pathName, relativePath } = await getCwd();
+            const { pathName, relativePath, rootPath, postsPath } = await getCwd();
             console.log("Current Directory Path:", pathName);
             console.log("Relative Path:", relativePath);
+            console.log("Root Path:", rootPath);
+            console.log("Posts Path:", postsPath);
         }
+        getCwds();
         const observer = new IntersectionObserver(
             (entries) => {
                 if (entries[0].isIntersecting && !loading && hasMoreArticles) {
