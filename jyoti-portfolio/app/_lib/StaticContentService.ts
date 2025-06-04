@@ -14,7 +14,8 @@ export const getCwd = async () => {
     const relativePath = path.relative(process.cwd(), pathName);
     const rootPath = path.resolve(__dirname, "../../")
     const postsPath = path.join(rootPath, 'posts');
-    return { pathName, relativePath, rootPath, postsPath };
+    const dirLists = fs.readdirSync(postsPath);
+    return { pathName, relativePath, rootPath, postsPath, dirLists };
 }
 const getFiles = async (dir: string): Promise<string[]> => {
     try {
@@ -40,7 +41,7 @@ const getFiles = async (dir: string): Promise<string[]> => {
 }
 
 export const getPosts = async (pagination: { page: number, limit: number }) => {
-    const postsPath = path.join(process.cwd(), 'posts');
+    const postsPath = path.relative(process.cwd(), 'posts');
     const { page = 1, limit = 10 } = pagination;
 
     // Pagination
@@ -71,7 +72,7 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
 
 
 export const getPostContent = async (filePath: string): Promise<Post | null> => {
-    const fullFilePath = path.join(process.cwd(), "posts", filePath);
+    const fullFilePath = path.join(path.relative(process.cwd(), "posts"), filePath);
 
     const fileReadStream = fs.createReadStream(fullFilePath, { encoding: 'utf-8' });
 
@@ -102,7 +103,7 @@ export const getPostContent = async (filePath: string): Promise<Post | null> => 
 }
 
 export const getPostFile = async (filePath: string): Promise<string> => {
-    const fullFilePath = path.join(process.cwd(), "posts", filePath);
+    const fullFilePath = path.join(path.relative(process.cwd(), "posts"), filePath);
     return fs.readFileSync(fullFilePath, { encoding: 'utf-8' });
 }
 
