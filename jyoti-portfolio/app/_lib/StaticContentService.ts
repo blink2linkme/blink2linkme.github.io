@@ -9,7 +9,7 @@ export type PostResult = {
     posts: Post[]
 }
 
-export const getCwd = () => {
+export const getCwd = async () => {
     const pathName = path.join(process.cwd(), 'public', 'posts');
     const relativePath = path.relative(process.cwd(), pathName);
     return { pathName, relativePath };
