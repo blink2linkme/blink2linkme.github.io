@@ -12,7 +12,9 @@ export type PostResult = {
 export const getCwd = async () => {
     const pathName = path.join(process.cwd(), 'public', 'posts');
     const relativePath = path.relative(process.cwd(), pathName);
-    return { pathName, relativePath };
+    const rootPath = path.resolve(__dirname, "../../")
+    const postsPath = path.join(rootPath, 'posts');
+    return { pathName, relativePath, rootPath, postsPath };
 }
 const getFiles = async (dir: string): Promise<string[]> => {
     try {
