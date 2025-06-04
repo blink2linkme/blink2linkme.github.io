@@ -9,25 +9,30 @@ export type PostResult = {
     posts: Post[]
 }
 const getFiles = async (dir: string): Promise<string[]> => {
-    let files: string[] = [];
+    try {
+        let files: string[] = [];
 
-    const fileLists = fs.readdirSync(dir);
+        const fileLists = fs.readdirSync(dir);
 
-    for (const file of fileLists) {
-        const filePath = path.join(dir, file);
-        const stat = fs.statSync(filePath);
+        for (const file of fileLists) {
+            const filePath = path.join(dir, file);
+            const stat = fs.statSync(filePath);
 
-        if (stat && stat.isDirectory())
-            files = files.concat(await getFiles(filePath));
-        else
-            files.push(filePath);
-    };
+            if (stat && stat.isDirectory())
+                files = files.concat(await getFiles(filePath));
+            else
+                files.push(filePath);
+        };
 
-    return files;
+        return files;
+    } catch (error) {
+        console.error("Error reading directory: getFiles ", error);
+        throw error;
+    }
 }
 
 export const getPosts = async (pagination: { page: number, limit: number }) => {
-    const postsPath = path.join(process.cwd(), 'posts');
+    const postsPath = path.join(process.cwd(), 'public', 'posts');
     const { page = 1, limit = 10 } = pagination;
 
     // Pagination
@@ -43,7 +48,6 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
         const postsMeta = await Promise.all(paginatedFiles.map(async (filePath) =>
             await readFileChunks(filePath)
         ));
-        console.log(postsMeta);
         const filteredPostMeta = postsMeta.filter(f => f !== null) as Post[];
         const postResult: PostResult = {
             count: filteredPostMeta.length,
@@ -51,6 +55,7 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
         }
         return postResult;
     } catch (error) {
+        console.error("Error reading posts: getPosts ", error);
         throw error;
     }
 }
@@ -58,7 +63,7 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
 
 
 export const getPostContent = async (filePath: string): Promise<Post | null> => {
-    const fullFilePath = path.join(process.cwd(), "posts", filePath);
+    const fullFilePath = path.join(process.cwd(), "public", "posts", filePath);
 
     const fileReadStream = fs.createReadStream(fullFilePath, { encoding: 'utf-8' });
 
@@ -82,13 +87,14 @@ export const getPostContent = async (filePath: string): Promise<Post | null> => 
         })
 
         rl.on('error', (err) => {
+            console.error("Error reading file: getPostContent: ", err);
             reject(err);
         })
     });
 }
 
 export const getPostFile = async (filePath: string): Promise<string> => {
-    const fullFilePath = path.join(process.cwd(), "posts", filePath);
+    const fullFilePath = path.join(process.cwd(), "public", "posts", filePath);
     return fs.readFileSync(fullFilePath, { encoding: 'utf-8' });
 }
 
@@ -122,21 +128,30 @@ const readFileChunks = async (filePath: string) => {
         });
 
         rl.on('error', (err) => {
+            console.log("Error reading file: readFileChunks: ", err);
             reject(err); // Reject if there's an error
         });
     });
 }
 
 const contentToPost = (fileLines: Array<string>, filePath: string, isFullContent: boolean = false): Post => {
-    const metaData = fileLines[1]?.split('|');
-    const postPath = path.join("posts");
-    const post: Post = {
-        title: fileLines[0]?.slice(1)?.trim(), // Assuming you want to slice from index 1
-        date: metaData ? metaData[0]?.slice(7, 17) : '',
-        tags: metaData ? metaData.slice(1).map(meta => meta.trim().replace('</small>', '')) : [],
-        description: fileLines[3]?.slice(2)?.trim(), // Slicing from index 2
-        previewText: isFullContent ? fileLines.slice(5).join('\n') : fileLines[5]?.substring(0, 100), // Ensure you are using line 4 (index 4)
-        fileName: filePath.split(postPath)[1]
-    };
-    return post;
+    try {
+        const metaData = fileLines[1]?.split('|');
+        const postPath = path.join("public", "posts");
+        const relativeFileName = path.relative(path.join(process.cwd(), postPath), filePath);
+        const post: Post = {
+            title: fileLines[0]?.slice(1)?.trim(),
+            date: metaData ? metaData[0]?.slice(7, 17) : '',
+            tags: metaData ? metaData.slice(1).map(meta => meta.trim().replace('</small>', '')) : [],
+            description: fileLines[3]?.slice(2)?.trim(),
+            previewText: isFullContent
+                ? fileLines.slice(5).join('\n')
+                : (fileLines[5]?.substring(0, 100) || ''),
+            fileName: relativeFileName
+        };
+        return post;
+    } catch (error) {
+        console.error("Error parsing post content:", error);
+        throw error;
+    }
 }

@@ -54,7 +54,7 @@ const Blog = () => {
                 observer.unobserve(currentRef);
             }
         };
-    }, [loadMoreArticles, loading, hasMoreArticles]);
+    }, [loading, hasMoreArticles]);
 
     return (
         <div className="flex flex-col lg:flex-row lg:space-x-8 bg-gray-100 dark:bg-gray-900 min-h-screen px-4 py-8">
@@ -136,49 +136,7 @@ const Blog = () => {
                     <p className="text-sm text-gray-300">- Peter Drucker</p>
                 </div>
 
-                {/* Sticky Content Below Quote 
-                <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mt-8">
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
-                        Popular Tags
-                    </h3>
-                    <div className="flex flex-wrap gap-4">
-                        <span className="bg-blue-500 text-white py-2 px-4 rounded-lg cursor-pointer transition-all transform hover:scale-105 hover:bg-blue-400">
-                            JavaScript
-                        </span>
-                        <span className="bg-green-500 text-white py-2 px-4 rounded-lg cursor-pointer transition-all transform hover:scale-105 hover:bg-green-400">
-                            React
-                        </span>
-                        <span className="bg-yellow-500 text-white py-2 px-4 rounded-lg cursor-pointer transition-all transform hover:scale-105 hover:bg-yellow-400">
-                            Web Development
-                        </span>
-                        <span className="bg-pink-500 text-white py-2 px-4 rounded-lg cursor-pointer transition-all transform hover:scale-105 hover:bg-pink-400">
-                            UX/UI
-                        </span>
-                    </div>
-                </div>*/}
-
-                {/* Newsletter Subscription 
-                <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 mt-8">
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
-                        Subscribe to our Newsletter
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
-                        Get the latest articles and updates straight to your inbox.
-                    </p>
-                    <form>
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="w-full p-3 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-white mb-4"
-                        />
-                        <button
-                            type="submit"
-                            className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-400"
-                        >
-                            Subscribe
-                        </button>
-                    </form>
-                </div>*/}
+                
             </div>
         </div>
     );
