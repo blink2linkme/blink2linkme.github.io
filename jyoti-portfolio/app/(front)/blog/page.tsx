@@ -11,9 +11,7 @@ const Blog = () => {
     const [hasMoreArticles, setHasMoreArticles] = useState<boolean>(true);
     const loadMoreRef = useRef<HTMLDivElement | null>(null);
 
-    const { pathName, relativePath } = getCwd();
-    console.log("Current Directory Path:", pathName);
-    console.log("Relative Path:", relativePath);
+
 
     const loadMoreArticles = useCallback(async () => {
         if (loading || !hasMoreArticles) return; // Prevent multiple loads while already loading or no more articles.
@@ -39,6 +37,11 @@ const Blog = () => {
 
     // Set up IntersectionObserver to load more articles when the user reaches the bottom
     useEffect(() => {
+        const getCwds = async () => {
+            const { pathName, relativePath } = await getCwd();
+            console.log("Current Directory Path:", pathName);
+            console.log("Relative Path:", relativePath);
+        }
         const observer = new IntersectionObserver(
             (entries) => {
                 if (entries[0].isIntersecting && !loading && hasMoreArticles) {
@@ -89,7 +92,7 @@ const Blog = () => {
                                 <div
                                     key={index}
                                     className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 hover:shadow-xl transition-all"
-                                >   
+                                >
                                     <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
                                         {article.title}
                                     </h3>
@@ -135,12 +138,12 @@ const Blog = () => {
                 <div className="bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-xl rounded-lg p-8 flex flex-col justify-center items-center">
                     <h3 className="text-xl font-semibold mb-6">Quote of the Day</h3>
                     <p className="italic text-lg text-center mb-6">
-                    &ldquo;The best way to predict the future is to create it.&rdquo;
+                        &ldquo;The best way to predict the future is to create it.&rdquo;
                     </p>
                     <p className="text-sm text-gray-300">- Peter Drucker</p>
                 </div>
 
-                
+
             </div>
         </div>
     );
