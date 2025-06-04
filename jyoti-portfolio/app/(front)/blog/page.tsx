@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState, useCallback, useRef } from "react";
-import { Post, getPosts } from "@/app/_lib/StaticContentService";  // Assuming getPosts is your function to fetch posts.
+import { Post, getPosts, getCwd } from "@/app/_lib/StaticContentService";  // Assuming getPosts is your function to fetch posts.
 import Loading from "../loading"; // Assuming you have a Loading component
 import Link from "next/link";
 
@@ -10,6 +10,10 @@ const Blog = () => {
     const [page, setPage] = useState<number>(1);
     const [hasMoreArticles, setHasMoreArticles] = useState<boolean>(true);
     const loadMoreRef = useRef<HTMLDivElement | null>(null);
+
+    const { pathName, relativePath } = getCwd();
+    console.log("Current Directory Path:", pathName);
+    console.log("Relative Path:", relativePath);
 
     const loadMoreArticles = useCallback(async () => {
         if (loading || !hasMoreArticles) return; // Prevent multiple loads while already loading or no more articles.
