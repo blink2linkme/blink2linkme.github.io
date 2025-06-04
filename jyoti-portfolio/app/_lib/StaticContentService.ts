@@ -12,7 +12,7 @@ export type PostResult = {
 export const getCwd = async () => {
     const pathName = path.join(process.cwd(), 'public', 'posts');
     const relativePath = path.relative(process.cwd(), pathName);
-    const rootPath = path.resolve(__dirname, "../../")
+    const rootPath = path.resolve(__dirname, "../../../")
     const postsPath = path.join(rootPath, 'posts');
     return { pathName, relativePath, rootPath, postsPath };
 }
@@ -40,7 +40,7 @@ const getFiles = async (dir: string): Promise<string[]> => {
 }
 
 export const getPosts = async (pagination: { page: number, limit: number }) => {
-    const rootPath = path.resolve(__dirname, "../../")
+    const rootPath = path.resolve(__dirname, "../../../")
     const postsPath = path.join(rootPath, 'posts');
     console.log(postsPath, "line 45");
     const { page = 1, limit = 10 } = pagination;
@@ -73,7 +73,7 @@ export const getPosts = async (pagination: { page: number, limit: number }) => {
 
 
 export const getPostContent = async (filePath: string): Promise<Post | null> => {
-    const rootPath = path.resolve(__dirname, "../../")
+    const rootPath = path.resolve(__dirname, "../../../")
     
     const fullFilePath = path.join(rootPath, "posts", filePath);
     console.log("Full File Path: ", fullFilePath, " line 79");
@@ -107,7 +107,7 @@ export const getPostContent = async (filePath: string): Promise<Post | null> => 
 }
 
 export const getPostFile = async (filePath: string): Promise<string> => {
-    const rootPath = path.resolve(__dirname, "../../");
+    const rootPath = path.resolve(__dirname, "../../../");
     const fullFilePath = path.join(rootPath, "posts", filePath);
     console.log("Full File Path: ", fullFilePath, " line 112");
     return fs.readFileSync(fullFilePath, { encoding: 'utf-8' });
@@ -152,7 +152,7 @@ const readFileChunks = async (filePath: string) => {
 const contentToPost = (fileLines: Array<string>, filePath: string, isFullContent: boolean = false): Post => {
     try {
         const metaData = fileLines[1]?.split('|');
-        const rootPath = path.resolve(__dirname, "../../");
+        const rootPath = path.resolve(__dirname, "../../../");
         const relativeFileName = path.join(rootPath, "posts", filePath);
         console.log("Relative File Name: ", relativeFileName, 'line 157');
         const post: Post = {
