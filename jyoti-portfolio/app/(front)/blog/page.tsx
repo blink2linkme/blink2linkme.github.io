@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState, useCallback, useRef } from "react";
-import { Post, getPosts, getCwd } from "@/app/_lib/StaticContentService";  // Assuming getPosts is your function to fetch posts.
+import { Post, getPosts } from "@/app/_lib/StaticContentService";  // Assuming getPosts is your function to fetch posts.
 import Loading from "../loading"; // Assuming you have a Loading component
 import Link from "next/link";
 
@@ -37,15 +37,7 @@ const Blog = () => {
 
     // Set up IntersectionObserver to load more articles when the user reaches the bottom
     useEffect(() => {
-        const getCwds = async () => {
-            const { pathName, relativePath, rootPath, postsPath } = await getCwd();
-            console.log("Current Directory Path:", pathName);
-            console.log("Relative Path:", relativePath);
-            console.log("Root Path:", rootPath);
-            console.log("Posts Path:", postsPath);
-            console.log("Directory Lists:");
-        }
-        getCwds();
+        
         const observer = new IntersectionObserver(
             (entries) => {
                 if (entries[0].isIntersecting && !loading && hasMoreArticles) {
@@ -68,7 +60,7 @@ const Blog = () => {
     }, [loading, hasMoreArticles]);
 
     return (
-        <div className="flex flex-col lg:flex-row lg:space-x-8 bg-gray-100 dark:bg-gray-900 min-h-screen px-4 py-8">
+        <div className="flex flex-col lg:flex-row bg-gray-100 dark:bg-gray-900 min-h-screen px-4 sm:px-6 py-8 gap-8">
             {/* Left part: Articles List */}
             <div className="lg:w-3/4 space-y-8">
                 <header className="text-center mb-12">
@@ -136,9 +128,8 @@ const Blog = () => {
                 </section>
             </div>
 
-            {/* Right part: Creative Sidebar */}
-            <div className="lg:w-1/4 space-y-8 mt-8 lg:mt-0 fixed top-60 right-0">
-                {/* Quote of the Day */}
+            
+            <div className="hidden lg:block lg:w-1/4 space-y-8 mt-8 lg:mt-0 fixed top-60 right-0">
                 <div className="bg-gradient-to-r from-green-400 to-blue-500 text-white shadow-xl rounded-lg p-8 flex flex-col justify-center items-center">
                     <h3 className="text-xl font-semibold mb-6">Quote of the Day</h3>
                     <p className="italic text-lg text-center mb-6">
@@ -149,6 +140,7 @@ const Blog = () => {
 
 
             </div>
+           
         </div>
     );
 };
